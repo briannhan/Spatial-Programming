@@ -17,7 +17,7 @@ dataset = pd.read_excel(dataPath, "Data")
 dataset.loc[dataset.Location.str.startswith("Jenkins & Felgar"), "shortLocation"] = "Jenkins, across from SEC parking"
 dataset.loc[dataset.Location.str.startswith("Felgar"), "shortLocation"] = "Across from Gallogly Hall"
 dataset.loc[dataset.Location.str.startswith("Asp"), "shortLocation"] = "Across from Memorial Union"
-dataset.loc[dataset.Location.str.startswith("Trout"), "shortLocation"] = "Trout street"
+dataset.loc[dataset.Location.str.startswith("Trout"), "shortLocation"] = "Trout Ave"
 
 """Rearranging the data so that as you go down the dataset, you go from east to
 west, heading from Trout Street towards the center of the campus ending up at
