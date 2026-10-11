@@ -64,11 +64,14 @@ ratioAxes = barCharts.add_subplot(1, 2, 2)
 ratioAxes.set_xlabel("Position")
 ratioAxes.set_ylabel("Ratio")
 ratioBarChart = ratioAxes.grouped_bar([dataset.vehicleToPedestrian, dataset.pedestrianToVehicle], tick_labels=dataset.shortLocation, labels=["Non-public-transit vehicle: Pedestrian", "Pedestrian: Non-public-transit vehicle"])
-ratioAxes.grid(axis="y")
+
 ratioAxes.legend()
 
 for bar in ratioBarChart.bar_containers:
     ratioAxes.bar_label(bar, fmt="{:.3f}")
+
+ratioAxes.set_yticks([0, 1, 2, 4, 6, 8, 10])
+ratioAxes.grid(axis="y")
 
 figurePath = cwd/"Traffic bar charts.png"
 barCharts.savefig(figurePath, dpi=400, bbox_inches="tight")
